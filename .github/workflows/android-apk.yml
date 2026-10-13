@@ -73,6 +73,11 @@ jobs:
             echo "keyPassword=wicoo-sign-2026"
           } > android/local.properties
 
+      - name: Get Flutter Dependency
+        run: |
+          flutter --version
+          flutter pub get
+
       - name: Setup
         env:
           ANDROID_NDK_HOME: ${{ steps.ndk.outputs.ndk-path }}
